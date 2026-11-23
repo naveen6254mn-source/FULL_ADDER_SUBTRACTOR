@@ -36,20 +36,78 @@ Diff = A ⊕ B ⊕ Bin
 
 Borrow out = A'Bin + A'B + BBin
 
-**Truthtable**
+**Truthtable FULL ADDER**
+<img width="429" height="395" alt="image" src="https://github.com/user-attachments/assets/80abb662-d002-49d9-94c6-0286b5bf6471" />
+
+**Full Subtractor**
+<img width="438" height="393" alt="image" src="https://github.com/user-attachments/assets/a8a257a3-bc2b-46be-97af-b28c1b28ec3c" />
+
+
 
 **Procedure**
 
-Write the detailed procedure here
+Type the program in Quartus software.
+
+Compile and run the program.
+
+Generate the RTL schematic and save the logic diagram.
+
+Create nodes for inputs and outputs to generate the timing diagram.
+
+For different input combinations generate the timing diagram.
 
 **Program:**
 
 /* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
 
-**RTL Schematic**
+**Full Adder**
+```
+module exp4(df,bo,a,b,bin);
+output df;
+output bo;
+input a;
+input b;
+input bin;
+wire w1,w2,w3;
+assign w1=a^b;
+assign w2=(~a&b);
+assign w3=(~w1&bin);
+assign df=w1^bin;
+assign bo=w2|w3;
+endmodule
+```
 
-**Output Timing Waveform**
+**Full Subtractor**
+```
+module full_subtractor(diff, borrow, a, b, bin);
+  output diff;
+  output borrow;
+  input a;
+  input b;
+  input bin;
+  assign diff = a ^ b ^ bin;
+  assign borrow = (~a & b) | (~(a ^ b) & bin);
+endmodule
+
+```
+
+**RTL Schematic Full Adder**
+<img width="1177" height="744" alt="image" src="https://github.com/user-attachments/assets/73ac16af-4650-46ed-89f0-cb8135a646c0" />
+
+**Full Subtractor**
+<img width="1351" height="542" alt="image" src="https://github.com/user-attachments/assets/90c4693f-f089-4fc6-bf52-66652ba1744e" />
+
+
+**Output Timing Waveform Full Adder**
+
+<img width="1920" height="1201" alt="image" src="https://github.com/user-attachments/assets/6fe1f766-cc9a-4786-9b51-d5e518be1d7b" />
+
+
+**Full Subtractor**
+
+<img width="1921" height="1201" alt="image" src="https://github.com/user-attachments/assets/a9b58edf-1fb6-422f-9d2e-30a3d9b285ee" />
+
 
 **Result:**
 
