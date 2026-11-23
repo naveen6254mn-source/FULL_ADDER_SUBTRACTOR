@@ -57,10 +57,12 @@ Create nodes for inputs and outputs to generate the timing diagram.
 For different input combinations generate the timing diagram.
 
 **Program:**
-
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+```
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+Developed by:NAVEEN M
+RegisterNumber:212225230197
 */
-
+```
 **Full Adder**
 ```
 module exp4(df,bo,a,b,bin);
